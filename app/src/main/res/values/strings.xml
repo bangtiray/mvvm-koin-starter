@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Core</string>
+    <string name="name">Name</string>
+    <string name="login">Login</string>
+    <string name="offline">You Are Offline</string>
+    <string name="please_turn_on">Please activate your connection via cellular / wifi network</string>
+</resources>

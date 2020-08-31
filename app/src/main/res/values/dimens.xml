@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dip50">50dp</dimen>
+    <dimen name="dip20">20dp</dimen>
+
+    <dimen name="headerTextSize">15.7sp</dimen>
+    <dimen name="bigTextSize">20sp</dimen>
+    <dimen name="smallTextSize">12sp</dimen>
+    <dimen name="banner_height">160dp</dimen>
+    <dimen name="normalPaddingTop">10dp</dimen>
+    <dimen name="normalPadding">10dp</dimen>
+    <dimen name="dip60">60dp</dimen>
+</resources>
