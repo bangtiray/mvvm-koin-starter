@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="placeholders">
+        <item>@drawable/jastan</item>
+        <item>@drawable/jastan</item>
+        <item>@drawable/jastan</item>
+        <item>@drawable/jastan</item>
+        <item>@drawable/jastan</item>
+    </integer-array>
+
+    <string-array name="titles">
+        <item>Dummy</item>
+        <item>Dummy</item>
+        <item>Dummy</item>
+        <item>Dummy</item>
+        <item>Dummy</item>
+    </string-array>
+</resources>

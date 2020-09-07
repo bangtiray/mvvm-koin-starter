@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.notifications.NotificationsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
+        style="@style/Widget.MaterialComponents.AppBarLayout.Surface"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cat_topappbar_tall_toolbar_height"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingtoolbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:collapsedTitleTextAppearance="?attr/textAppearanceHeadline6"
+            app:expandedTitleGravity="bottom"
+            app:expandedTitleMarginBottom="24dp"
+            app:expandedTitleMarginStart="16dp"
+            app:expandedTitleTextAppearance="?attr/textAppearanceHeadline5"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorSurface"
+                android:elevation="0dp"
+                app:layout_collapseMode="pin"
+                app:title="@string/title_home"
+                app:titleTextColor="@color/black_800" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.home.HomeFragment">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <developer.shivam.crescento.CrescentoImageView
+                        android:id="@+id/crescentImageView"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:elevation="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pa"
+                        app:crescentoTintMode="manual"
+                        app:curvature="20dp"
+                        app:gravity="top" />
+
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_1"
+                    android:layout_marginTop="@dimen/keyline_2"
+                    android:layout_marginBottom="@dimen/keyline_0"
+                    android:text="@string/news"
+                    android:textAppearance="?attr/textAppearanceOverline"
+                    android:textColor="@color/material_on_background_emphasis_medium"
+                    android:textSize="@dimen/dip20"
+                    android:textStyle="bold" />
+
+                <com.github.islamkhsh.CardSliderViewPager
+
+                    android:id="@+id/viewPager2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:auto_slide_time="3"
+                    app:cardSlider_indicator="@id/indicator"
+                    app:cardSlider_otherPagesWidth="24dp"
+                    app:cardSlider_pageMargin="12dp"
+                    app:cardSlider_smallAlphaFactor="0.5"
+                    app:cardSlider_smallScaleFactor="0.9" />
+
+
+                <com.github.islamkhsh.CardSliderIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="12dp"
+                    app:indicatorsToShow="5" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/keyline_0"
+                    android:visibility="gone" />
+
+                <View
+                    style="@style/Divider"
+                    android:layout_marginTop="@dimen/keyline_5" />
+
+                <TextView
+                    android:id="@+id/usage_title_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_1"
+                    android:layout_marginTop="@dimen/keyline_1"
+                    android:text="@string/our_product"
+                    android:textAppearance="?attr/textAppearanceOverline"
+                    android:textColor="@color/material_on_background_emphasis_medium"
+                    android:textSize="@dimen/dip20"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:focusable="false"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    tools:itemCount="1" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dip20"
+                    android:text="@string/instructions_how_to_title"
+                    android:textAppearance="?attr/textAppearanceOverline"
+                    android:textColor="@color/material_on_background_emphasis_medium" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dip20"
+                    android:text="@string/instructions_how_to_title"
+                    android:textAppearance="?attr/textAppearanceOverline"
+                    android:textColor="@color/material_on_background_emphasis_medium" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dip20"
+                    android:text="@string/instructions_how_to_title"
+                    android:textAppearance="?attr/textAppearanceOverline"
+                    android:textColor="@color/material_on_background_emphasis_medium" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dip20"
+                    android:text="@string/instructions_how_to_title"
+                    android:textAppearance="?attr/textAppearanceOverline"
+                    android:textColor="@color/material_on_background_emphasis_medium" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dip20"
+                    android:text="@string/instructions_how_to_title"
+                    android:textAppearance="?attr/textAppearanceOverline"
+                    android:textColor="@color/material_on_background_emphasis_medium" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dip20"
+                    android:text="@string/instructions_how_to_title"
+                    android:textAppearance="?attr/textAppearanceOverline"
+                    android:textColor="@color/material_on_background_emphasis_medium" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dip20"
+                    android:text="@string/instructions_how_to_title"
+                    android:textAppearance="?attr/textAppearanceOverline"
+                    android:textColor="@color/material_on_background_emphasis_medium" />
+
+                <TextView
+                    android:id="@+id/usage_body_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/keyline_5"
+                    android:layout_marginBottom="@dimen/keyline_5"
+                    android:text="@string/instructions_how_to"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:textColor="@color/material_on_background_emphasis_medium" />
+
+                <TextView
+                    android:id="@+id/options_title_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/keyline_5"
+                    android:text="@string/instructions_options_title"
+                    android:textAppearance="?attr/textAppearanceOverline"
+                    android:textColor="@color/material_on_background_emphasis_medium" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/keyline_5">
+
+                    <TextView
+                        android:id="@+id/dark_theme_title_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:text="@string/instructions_enable_dark_title"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:textColor="@color/material_on_background_emphasis_medium" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/dark_theme_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center_vertical" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

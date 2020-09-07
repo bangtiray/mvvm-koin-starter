@@ -1,4 +1,4 @@
-package com.bangtiray.core.network
+package com.bangtiray.core.network.auth
 
 import android.app.Activity
 import android.content.ComponentCallbacks

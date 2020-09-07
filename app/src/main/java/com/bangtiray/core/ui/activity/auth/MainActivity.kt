@@ -1,20 +1,17 @@
 package com.bangtiray.core.ui.activity.auth
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import com.bangtiray.core.database.LocalUserDatabase
 import com.bangtiray.core.database.entity.LocalUser
-import com.bangtiray.core.network.AuthInstanceNetwork
-import com.bangtiray.core.network.AuthNetwork
+import com.bangtiray.core.network.auth.AuthNetwork
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.bangtiray.core.di.authNetwork
 import com.bangtiray.core.ui.base.BaseActivity
 import com.bangtiray.core.ui.viewmodel.AuthViewModel
 import com.bangtiray.core.utils.logi
-import com.google.gson.Gson
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -24,7 +21,7 @@ class MainActivity : BaseActivity() {
     private lateinit var btnLogin:Button
     private val viewModel:AuthViewModel by viewModel()
     private val localUserDb:LocalUserDatabase by inject()
-    private val authNetwork:AuthNetwork by authNetwork()
+    private val authNetwork: AuthNetwork by authNetwork()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

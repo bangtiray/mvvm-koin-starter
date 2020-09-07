@@ -1,4 +1,4 @@
-package com.bangtiray.core.network
+package com.bangtiray.core.network.auth
 
 import com.bangtiray.core.data.ConstantValue
 import com.bangtiray.core.database.entity.LocalUser
@@ -30,6 +30,7 @@ interface AuthInstanceNetwork{
             .addConverterFactory(GsonConverterFactory.create(gsonBuilder))
             .build()
 
-        fun create():AuthInstanceNetwork= retrofit.create(AuthInstanceNetwork::class.java)
+        fun create(): AuthInstanceNetwork = retrofit.create(
+            AuthInstanceNetwork::class.java)
     }
 }

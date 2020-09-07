@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.bangtiray.core.CoreApp
 import com.bangtiray.core.ui.activity.auth.R
 import com.bangtiray.core.utils.ConnectionLiveData
 import com.bangtiray.core.utils.slideNetworkStatus
@@ -17,6 +18,11 @@ abstract class BaseActivity : AppCompatActivity() {
         ConnectionLiveData(this).observe(this, Observer { connectionSate ->
             checkSlide(connectionSate)
         })
+
+        (application as CoreApp).preferenceRepository
+            .nightModeLive.observe(this, Observer { nigthMode ->
+                nigthMode?.let { delegate.localNightMode = it }
+            })
     }
 
     private fun checkSlide(connectionSate: Boolean) {
@@ -30,7 +36,7 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     private fun showSlideNotConnect() {
-        slideDialogNetwork= Dialog(this, R.style.CustomDialogAnimation)
+        slideDialogNetwork = Dialog(this, R.style.Theme_Design_BottomSheetDialog)
         slideNetworkStatus(slideDialogNetwork)
     }
 }

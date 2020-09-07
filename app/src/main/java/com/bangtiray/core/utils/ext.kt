@@ -61,7 +61,7 @@ fun Context.slideNetworkStatus(slide : Dialog){
     )
     slideDialog.setContentView(R.layout.popup_not_connect)
     val layoutParams = WindowManager.LayoutParams()
-    slideDialog.window?.attributes?.windowAnimations = R.style.CustomDialogAnimation
+    slideDialog.window?.attributes?.windowAnimations = R.style.Theme_Design_BottomSheetDialog
     layoutParams.copyFrom(slideDialog.window?.attributes)
     val heightSpan = (this.resources.displayMetrics.heightPixels * 0.250).toInt()
 

@@ -1,5 +1,7 @@
 package com.bangtiray.core.data
 
 object ConstantValue {
-    const val baseUrl="http://192.168.43.123:8000/api/v1/"
+    const val baseUrl="https://jastan.co.id/api/v1/"
+    const val blogImageUrl="https://jastan.co.id/storage/img/blog/"
+    const val packageName="com.bangtiray.core.ui.screen."
 }

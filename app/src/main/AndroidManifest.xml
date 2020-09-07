@@ -2,19 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.bangtiray.core.ui.activity.auth">
-<uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="com.bangtiray.core.CoreApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/Theme.MyApp"
         tools:ignore="UnusedAttribute">
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name="com.bangtiray.core.ui.screen.trip.TripActivity"></activity>
+        <activity android:name=".MainActivity" /> <!--  -->
+        <!-- <activity -->
+        <!-- android:name=".MainActivity" -->
+        <!-- android:screenOrientation="portrait" /> -->
+        <activity
+            android:name=".ui.MainApps"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
